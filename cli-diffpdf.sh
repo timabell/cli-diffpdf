@@ -19,3 +19,8 @@ then
     echo "please install wdiff!"
     exit 1
 fi
+
+
+# dump pdfs into tests
+pdftotext -layout $1 &> file1.tmp
+pdftotext -layout $2 &> file2.tmp
