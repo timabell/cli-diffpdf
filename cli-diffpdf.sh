@@ -10,6 +10,6 @@ fi
 # check for tools needed
 if [ -z `which pdftotext` ]
 then
-    echo "please install pdftotext" &>2
+    echo "please install pdftotext/xpdf" &>2
     exit 1
 fi
