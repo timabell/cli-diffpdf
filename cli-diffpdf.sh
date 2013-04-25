@@ -3,7 +3,7 @@
 # check for two arguments being given
 if [ $# -ne 2 ]
 then
-    echo "usage: cli-diffpdf file1.pdf file2.pdf"
+    echo "usage: cli-diffpdf file1.pdf file2.pdf" &>2
     exit 1
 fi
 
