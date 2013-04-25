@@ -30,3 +30,7 @@ RED=$'\e'"[1;31m"
 GREEN=$'\e'"[1;32m"
 RESET=$'\e'"[0m"
 wdiff -w$RED -x$RESET -y$GREEN -z$RESET -n file1.tmp file2.tmp
+
+# clean up temporary files
+rm file1.tmp
+rm file2.tmp
