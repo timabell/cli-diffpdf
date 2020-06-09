@@ -22,8 +22,8 @@ fi
 
 
 # dump pdfs into tests
-pdftotext -layout $1 file1.tmp
-pdftotext -layout $2 file2.tmp
+pdftotext -layout "$1" file1.tmp
+pdftotext -layout "$2" file2.tmp
 
 # compare the two textdumps
 RED=$'\e'"[1;31m"
