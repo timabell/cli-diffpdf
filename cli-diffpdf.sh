@@ -14,13 +14,15 @@ then
     exit 1
 fi
 
+mkdir -p tmp
+cd tmp
+
 # dump pdfs into tests
 pdftotext -layout "$1" file1.tmp
 pdftotext -layout "$2" file2.tmp
 
-# compare the two textdumps
-kdiff3 file1.tmp file2.tmp
+egrep -v 'Page.*of|DocuSign Envelope|^$' file1.tmp > file1-filtered.tmp
+egrep -v 'Page.*of|DocuSign Envelope|^$' file2.tmp > file2-filtered.tmp
 
-# clean up temporary files
-rm file1.tmp
-rm file2.tmp
+# compare the two textdumps
+kdiff3 file1-filtered.tmp file2-filtered.tmp &
