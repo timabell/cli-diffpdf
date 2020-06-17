@@ -25,4 +25,4 @@ egrep -v 'Page.*of|DocuSign Envelope|^                                    In Pro
 egrep -v 'Page.*of|DocuSign Envelope|^                                    In Process$|^$' file2.tmp | sed 's/In Process/          /g' > file2-filtered.tmp
 
 # compare the two textdumps
-kdiff3 file1-filtered.tmp file2-filtered.tmp &
+meld file1-filtered.tmp file2-filtered.tmp &
